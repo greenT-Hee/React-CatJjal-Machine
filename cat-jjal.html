@@ -43,15 +43,7 @@
         return <h1>{props.children}</h1>;
       }
 
-      const Form = () => {
-        const [counter, setCounter] = React.useState(1);
-
-        console.log(counter);
-        function handleFormSubmit(event) {
-          event.preventDefault();
-          console.log("폼 전송됨");
-          setCounter(counter + 1);
-        }
+      const Form = ({ handleFormSubmit }) => {
         return (
           <form onSubmit={handleFormSubmit}>
             <input
@@ -108,15 +100,25 @@
       }
       sayHello("태희");
 
-      const app = (
-        <div>
-          <Title>1번째 고양이 가라사대2</Title>
-          <Form />
-          <MainCard img="https://file1.bobaedream.co.kr/multi_image/strange/2016/10/13/17/Dwk57ff47e6efb62.jpg" />
-          <Favorites />
-        </div>
-      );
-      ReactDOM.render(app, box);
+      const App = () => {
+        const [counter, setCounter] = React.useState(1);
+        function handleFormSubmit(event) {
+          event.preventDefault();
+          console.log("폼 전송됨");
+          setCounter(counter + 1);
+        }
+
+        return (
+          <div>
+            <Title>{counter}번째 고양이 가라사대</Title>
+            <Form handleFormSubmit={handleFormSubmit} />
+            <MainCard img="https://file1.bobaedream.co.kr/multi_image/strange/2016/10/13/17/Dwk57ff47e6efb62.jpg" />
+            <Favorites />
+          </div>
+        );
+      };
+
+      ReactDOM.render(<App />, box);
 
       // // 1. 좋아요 버튼 찾기
       // const likeButton = document.querySelector(".main-card button");
