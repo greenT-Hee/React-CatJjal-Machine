@@ -1,16 +1,15 @@
-# Study-React-Basic
+# React Cat-jjal Machine
 
-인프런 리액트 강의 실습 Repo입니다.
+<img src = "https://user-images.githubusercontent.com/101693495/182852285-e95ae17f-b6a2-4ef1-9ddd-20a2e63cfb7f.png" width="350px">
 
-# React Blog
 
-<img src = "ezgif.com-gif-maker (3).gif" >
 
 <br>
 
 ## 프로젝트 소개
 
-React로 Single Page Application을 구현하는 블로그 구현 프로젝트입니다.
+React를 babel 트랜스컴파일러를 사용한 후, Node 환경에 컴포넌트화를 해보는 프로젝트입니다. 
+
 
 <br>
 
@@ -22,20 +21,15 @@ React로 Single Page Application을 구현하는 블로그 구현 프로젝트�
 <br>
 
 ## 구현 기능
-
-1. React를 활용한 구역별, 기능별 컴포넌트화
-2. `useState`를 사용하여 login/logout 버튼 바꾸기
-3. `useEffect`를 사용하 `Json` 형식의 data dummy를 `fetching`
-4. `<BrouserRouter>`로 SPA 구현
+- input창에 텍스트를 쓰고 입력하면 고양이 사진을 open API를 비동기로 fetch합니다. 
+- 좋아요 버튼을 누르면 
+- localStorage에 사진 url과 count 숫자를 담아 데이터를 유지합니다.
+- useState hook을 사용하여 상태 관리를 하고 있습니다.
 
 <br>
 
 ## 배운점
 
-1. React로 fetch를 사용하여 dummy data를 불러오기
-2. App.jsx에서 라우터가 설정된 컴포넌트에서 render()함수를 사용하여 props 값을 전달
-3. 컴포넌트를 map을 사용하여 user 정보를 뿌리는 연습
+- useState를 사용하면서, 초기값을 함수로 넣어 사용하여 최적화하는 법 습득
+- 바닐라자바스크립트로만 async/await를 사용했는데, 리액트로도 비동기 함수를 실행하는 방법을 습득
 
-## 아쉬운 점
-
-1. params 학습이 부족하여 여러 viewPost 페이지를 생성 실패
