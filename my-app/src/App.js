@@ -34,19 +34,20 @@ const App = () => {
   // const [favorites, setFavorites] = React.useState(
   //   jsonLocalStorage.getItem(favorites) || []
   // );
+  const [favorites, setFavorites] = React.useState(() => {
+    return jsonLocalStorage.getItem("favorites") || [];
+  });
+
   function handleHeartClick() {
     const nextFavorites = [...favorites, mainCat];
     setFavorites(nextFavorites);
     jsonLocalStorage.setItem("favorites", nextFavorites);
   }
-  const [favorites, setFavorites] = React.useState(() => {
-    return jsonLocalStorage.getItem("favorites") || [];
-  });
 
   const alreadyFavorite = favorites.includes(mainCat);
 
-  async function setInitialCat(value) {
-    const newCat = await fetchCat(value);
+  async function setInitialCat() {
+    const newCat = await fetchCat("First Comment");
     setMainCat(newCat);
     console.log(newCat);
   }
